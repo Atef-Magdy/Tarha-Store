@@ -13,6 +13,7 @@ namespace TarhaStore
 {
     public partial class mainView : Form
     {
+        int totalPrice = 0;
         public mainView()
         {
             InitializeComponent();
@@ -89,6 +90,15 @@ namespace TarhaStore
             form2.Show();
             this.Hide();
         }
+        private void Pill_UserDeletingRow(object sender,DataGridViewRowCancelEventArgs e)
+        {
+            int numberOfRaws = pill.SelectedRows.Count;
+            int price, quantity;
+            price = (int)pill.SelectedRows[0].Cells[1].Value;
+            quantity = (int)pill.SelectedRows[0].Cells[0].Value;
+            totalPrice -= price * quantity;
+            total.Text = totalPrice.ToString();
+        }
 
         private void add_Click(object sender, EventArgs e)
         {
@@ -147,6 +157,8 @@ namespace TarhaStore
                 pill.Rows.Add(row);
                 search.Text = "";
                 quantityBox.Text = "";
+                totalPrice += price*quantity;
+                total.Text = totalPrice.ToString();
             }
         }
     }

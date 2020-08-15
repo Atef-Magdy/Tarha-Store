@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainView));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.storeDetails = new System.Windows.Forms.Button();
             this.admin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@
             this.print = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.TextBox();
             this.itemsTableAdapter = new TarhaStore.TarhaDBDataSetTableAdapters.itemsTableAdapter();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tarhaDBDataSet)).BeginInit();
@@ -79,16 +80,20 @@
             // pill
             // 
             this.pill.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arabic Typesetting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.pill.AllowUserToResizeColumns = false;
+            this.pill.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arabic Typesetting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.pill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.quantity,
             this.price,
             this.name});
             resources.ApplyResources(this.pill, "pill");
+            this.pill.MultiSelect = false;
             this.pill.Name = "pill";
             this.pill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.pill.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.Pill_UserDeletingRow);
             // 
             // quantity
             // 
@@ -236,6 +241,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
