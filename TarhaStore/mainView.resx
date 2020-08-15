@@ -249,6 +249,9 @@
   <metadata name="tarhaDBDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="tarhaDBDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -477,11 +480,14 @@
   <data name="&gt;&gt;add.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="quantityBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9.75pt, style=Bold</value>
+  </data>
   <data name="quantityBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>196, 249</value>
   </data>
   <data name="quantityBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 20</value>
+    <value>78, 22</value>
   </data>
   <data name="quantityBox.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -525,11 +531,14 @@
   <data name="&gt;&gt;print.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="search.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9.75pt, style=Bold</value>
+  </data>
   <data name="search.Location" type="System.Drawing.Point, System.Drawing">
     <value>196, 167</value>
   </data>
   <data name="search.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 20</value>
+    <value>78, 22</value>
   </data>
   <data name="search.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -547,19 +556,19 @@
     <value>0</value>
   </data>
   <metadata name="itemsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>315, 17</value>
+    <value>340, 25</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>35</value>
+    <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>885, 536</value>
+    <value>885, 509</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1696,24 +1705,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>طرحة</value>
   </data>
-  <data name="&gt;&gt;itemsBindingSource.Name" xml:space="preserve">
-    <value>itemsBindingSource</value>
-  </data>
-  <data name="&gt;&gt;itemsBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tarhaDBDataSet.Name" xml:space="preserve">
-    <value>tarhaDBDataSet</value>
-  </data>
-  <data name="&gt;&gt;tarhaDBDataSet.Type" xml:space="preserve">
-    <value>TarhaStore.TarhaDBDataSet, TarhaDBDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;itemsTableAdapter.Name" xml:space="preserve">
-    <value>itemsTableAdapter</value>
-  </data>
-  <data name="&gt;&gt;itemsTableAdapter.Type" xml:space="preserve">
-    <value>TarhaStore.TarhaDBDataSetTableAdapters.itemsTableAdapter, TarhaDBDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <data name="&gt;&gt;quantity.Name" xml:space="preserve">
     <value>quantity</value>
   </data>
@@ -1731,6 +1722,24 @@
   </data>
   <data name="&gt;&gt;name.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;itemsBindingSource.Name" xml:space="preserve">
+    <value>itemsBindingSource</value>
+  </data>
+  <data name="&gt;&gt;itemsBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tarhaDBDataSet.Name" xml:space="preserve">
+    <value>tarhaDBDataSet</value>
+  </data>
+  <data name="&gt;&gt;tarhaDBDataSet.Type" xml:space="preserve">
+    <value>TarhaStore.TarhaDBDataSet, TarhaDBDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;itemsTableAdapter.Name" xml:space="preserve">
+    <value>itemsTableAdapter</value>
+  </data>
+  <data name="&gt;&gt;itemsTableAdapter.Type" xml:space="preserve">
+    <value>TarhaStore.TarhaDBDataSetTableAdapters.itemsTableAdapter, TarhaDBDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>mainView</value>

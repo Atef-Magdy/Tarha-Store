@@ -89,5 +89,65 @@ namespace TarhaStore
             form2.Show();
             this.Hide();
         }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            Boolean check1, check2;
+            check1 = check2 = false;
+            String name = "";
+            int quantity = 0;
+            int price = 0;
+
+            string connetionString = null;
+            SqlConnection connection;
+            SqlCommand command;
+            
+            if(!search.Text.Equals("") && !quantityBox.Text.Equals(""))
+            {
+               
+                connetionString = "Data Source=DESKTOP-MKVLAC4\\SQLEXPRESS; Initial Catalog=TarhaDB;Integrated Security=true;";
+                string sql = "SELECT price from [TarhaDB].[dbo].[items] where name = '" + search.Text + "' ";
+                connection = new SqlConnection(connetionString);
+                command = new SqlCommand(sql, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                
+                if (!reader.Read())
+                {
+                    MessageBox.Show("لا يوجد منتج بهذا الأسم");
+                }
+                else
+                {
+                    name = search.Text;
+                    price = reader.GetInt32(0);
+                    check1 = true;
+                }
+                
+                if (!int.TryParse(quantityBox.Text, out quantity))
+                {
+                    MessageBox.Show("خانة العدد للأرقام فقط");
+                }
+                else
+                {
+                    check2 = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("يوجد أحد المتطلبات فارغة ");
+            }
+
+            if(check1 && check2)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(pill);
+                row.Cells[2].Value = name;
+                row.Cells[1].Value = price;
+                row.Cells[0].Value = quantity;
+                pill.Rows.Add(row);
+                search.Text = "";
+                quantityBox.Text = "";
+            }
+        }
     }
 }
