@@ -1,0 +1,8 @@
+Create DATABASE TarhaDB;
+
+CREATE TABLE items (
+    name varchar(150) NOT NULL,
+    price int NOT NULL,
+    quantity int NOT NULL,
+	PRIMARY KEY (name)
+);

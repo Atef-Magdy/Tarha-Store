@@ -1,0 +1,11 @@
+F:\Files\Tarha Store Project\TarhaStore\bin\Debug\TarhaStore.exe.config
+F:\Files\Tarha Store Project\TarhaStore\bin\Debug\TarhaStore.exe
+F:\Files\Tarha Store Project\TarhaStore\bin\Debug\TarhaStore.pdb
+F:\Files\Tarha Store Project\TarhaStore\obj\Debug\TarhaStore.csprojAssemblyReference.cache
+F:\Files\Tarha Store Project\TarhaStore\obj\Debug\TarhaStore.Properties.Resources.resources
+F:\Files\Tarha Store Project\TarhaStore\obj\Debug\TarhaStore.csproj.GenerateResource.cache
+F:\Files\Tarha Store Project\TarhaStore\obj\Debug\TarhaStore.csproj.CoreCompileInputs.cache
+F:\Files\Tarha Store Project\TarhaStore\obj\Debug\TarhaStore.exe
+F:\Files\Tarha Store Project\TarhaStore\obj\Debug\TarhaStore.pdb
+F:\Files\Tarha Store Project\TarhaStore\obj\Debug\TarhaStore.storeDetails.resources
+F:\Files\Tarha Store Project\TarhaStore\obj\Debug\TarhaStore.mainView.resources
