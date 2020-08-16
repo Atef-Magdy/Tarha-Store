@@ -161,5 +161,10 @@ namespace TarhaStore
                 total.Text = totalPrice.ToString();
             }
         }
+
+        private void quantityBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
