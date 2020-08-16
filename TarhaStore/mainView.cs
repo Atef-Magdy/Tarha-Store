@@ -61,6 +61,8 @@ namespace TarhaStore
 
         private void form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'tarhaDBDataSet.items' table. You can move, or remove it, as needed.
+            this.itemsTableAdapter.Fill(this.tarhaDBDataSet.items);
             panels.Add(panel1);
             panels.Add(panel2);
             panels[0].BringToFront();
