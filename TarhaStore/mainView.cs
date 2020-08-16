@@ -13,6 +13,7 @@ namespace TarhaStore
 {
     public partial class mainView : Form
     {
+        List<Panel> panels = new List<Panel>();
         int totalPrice = 0;
         public mainView()
         {
@@ -60,6 +61,10 @@ namespace TarhaStore
 
         private void form1_Load(object sender, EventArgs e)
         {
+            panels.Add(panel1);
+            panels.Add(panel2);
+            panels[0].BringToFront();
+
             string connetionString = null;
             SqlConnection connection;
             SqlCommand command;
@@ -86,9 +91,7 @@ namespace TarhaStore
 
         private void storeDetails_Click(object sender, EventArgs e)
         {
-            storeDetails form2 = new storeDetails();
-            form2.Show();
-            this.Hide();
+            panels[1].BringToFront();
         }
         private void Pill_UserDeletingRow(object sender,DataGridViewRowCancelEventArgs e)
         {
@@ -165,6 +168,26 @@ namespace TarhaStore
         private void quantityBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            panels[0].BringToFront();
         }
     }
 }
