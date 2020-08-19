@@ -63,8 +63,9 @@ namespace TarhaStore
         {
             // TODO: This line of code loads data into the 'tarhaDBDataSet.items' table. You can move, or remove it, as needed.
             this.itemsTableAdapter.Fill(this.tarhaDBDataSet.items);
-            panels.Add(panel1);
-            panels.Add(panel2);
+            panels.Add(MainPanel);
+            panels.Add(StockPanel);
+            panels.Add(AdminPanel);
             panels[0].BringToFront();
 
             string connetionString = null;
@@ -188,6 +189,26 @@ namespace TarhaStore
         }
 
         private void back_Click(object sender, EventArgs e)
+        {
+            panels[0].BringToFront();
+        }
+
+        private void tableLayoutPanel19_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void admin_Click(object sender, EventArgs e)
+        {
+            panels[2].BringToFront();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backFromAdmin_Click_1(object sender, EventArgs e)
         {
             panels[0].BringToFront();
         }
