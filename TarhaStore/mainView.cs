@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace TarhaStore
 {
     public partial class mainView : Form
     {
+        String connetionString = "Data Source=DESKTOP-MKVLAC4\\SQLEXPRESS; Initial Catalog=TarhaDB;Integrated Security=true;";
         List<Panel> panels = new List<Panel>();
         int totalPrice = 0;
         public mainView()
@@ -37,11 +33,9 @@ namespace TarhaStore
 
         private void print_Click(object sender, EventArgs e)
         {
-            string connetionString = null;
             SqlConnection connection;
             SqlCommand command;
 
-            connetionString = "Data Source=DESKTOP-MKVLAC4\\SQLEXPRESS; Initial Catalog=TarhaDB;Integrated Security=true;";
             string sql = "INSERT INTO [TarhaDB].[dbo].[items] (name , price , quantity) VALUES('harer' , 20 , 70)";
             connection = new SqlConnection(connetionString);
             try
@@ -68,11 +62,9 @@ namespace TarhaStore
             panels.Add(AdminPanel);
             panels[0].BringToFront();
 
-            string connetionString = null;
             SqlConnection connection;
             SqlCommand command;
 
-            connetionString = "Data Source=DESKTOP-MKVLAC4\\SQLEXPRESS; Initial Catalog=TarhaDB;Integrated Security=true;";
             string sql = "SELECT name from [TarhaDB].[dbo].[items]";
             connection = new SqlConnection(connetionString);
             command = new SqlCommand(sql, connection);
@@ -114,14 +106,12 @@ namespace TarhaStore
             int quantity = 0;
             int price = 0;
 
-            string connetionString = null;
             SqlConnection connection;
             SqlCommand command;
             
             if(!search.Text.Equals("") && !quantityBox.Text.Equals(""))
             {
                
-                connetionString = "Data Source=DESKTOP-MKVLAC4\\SQLEXPRESS; Initial Catalog=TarhaDB;Integrated Security=true;";
                 string sql = "SELECT price from [TarhaDB].[dbo].[items] where name = '" + search.Text + "' ";
                 connection = new SqlConnection(connetionString);
                 command = new SqlCommand(sql, connection);
@@ -200,7 +190,15 @@ namespace TarhaStore
 
         private void admin_Click(object sender, EventArgs e)
         {
-            panels[2].BringToFront();
+            String message = "أدخل رمز الدخول" 
+                , title = "رمز دخول المسئول";
+            object myValue;
+            myValue = Interaction.InputBox(message, title);
+            if((String)myValue == "yasmine&moustfa")
+            {
+                panels[2].BringToFront();
+            }
+            
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -211,6 +209,16 @@ namespace TarhaStore
         private void backFromAdmin_Click_1(object sender, EventArgs e)
         {
             panels[0].BringToFront();
+        }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
