@@ -30,9 +30,8 @@ namespace TarhaStore
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainView));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.pill = new System.Windows.Forms.DataGridView();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +45,6 @@ namespace TarhaStore
             this.label6 = new System.Windows.Forms.Label();
             this.quantityBox = new System.Windows.Forms.TextBox();
             this.search = new System.Windows.Forms.TextBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.storeDetails = new System.Windows.Forms.Button();
@@ -72,49 +70,59 @@ namespace TarhaStore
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.StockPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.tarhaDBDataSet = new TarhaStore.TarhaDBDataSet();
+            this.storeDetailsGrid = new System.Windows.Forms.DataGridView();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.back = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.itemsTableAdapter = new TarhaStore.TarhaDBDataSetTableAdapters.itemsTableAdapter();
             this.AdminPanel = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel35 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
+            this.adminGrid = new System.Windows.Forms.DataGridView();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
+            this.addingTypebtn = new System.Windows.Forms.Button();
+            this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.addingTypeName = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
+            this.addingTypeQuantity = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
+            this.addingTypePrice = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel29 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel31 = new System.Windows.Forms.TableLayoutPanel();
+            this.searchBynameEditing = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel32 = new System.Windows.Forms.TableLayoutPanel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel33 = new System.Windows.Forms.TableLayoutPanel();
+            this.editingValue = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel34 = new System.Windows.Forms.TableLayoutPanel();
+            this.editBynameBtn = new System.Windows.Forms.Button();
+            this.deleteTpe = new System.Windows.Forms.Button();
+            this.editByQuantityBtn = new System.Windows.Forms.Button();
+            this.editByPriceBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.AdminPannerLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.backFromAdmin = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.itemsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.itemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.addingTypeName = new System.Windows.Forms.TextBox();
-            this.addingTypeQuantity = new System.Windows.Forms.TextBox();
-            this.addingTypePrice = new System.Windows.Forms.TextBox();
-            this.addingTypebtn = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.searchBynameEditing = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.editingValue = new System.Windows.Forms.TextBox();
-            this.editBynameBtn = new System.Windows.Forms.Button();
-            this.editByQuantityBtn = new System.Windows.Forms.Button();
-            this.editByPriceBtn = new System.Windows.Forms.Button();
-            this.deleteTpe = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pill)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -136,20 +144,29 @@ namespace TarhaStore
             this.tableLayoutPanel19.SuspendLayout();
             this.StockPanel.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tarhaDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storeDetailsGrid)).BeginInit();
             this.tableLayoutPanel16.SuspendLayout();
             this.tableLayoutPanel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.AdminPanel.SuspendLayout();
+            this.tableLayoutPanel35.SuspendLayout();
+            this.tableLayoutPanel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adminGrid)).BeginInit();
+            this.tableLayoutPanel23.SuspendLayout();
+            this.tableLayoutPanel24.SuspendLayout();
+            this.tableLayoutPanel25.SuspendLayout();
+            this.tableLayoutPanel26.SuspendLayout();
+            this.tableLayoutPanel27.SuspendLayout();
+            this.tableLayoutPanel28.SuspendLayout();
+            this.tableLayoutPanel29.SuspendLayout();
+            this.tableLayoutPanel30.SuspendLayout();
+            this.tableLayoutPanel31.SuspendLayout();
+            this.tableLayoutPanel32.SuspendLayout();
+            this.tableLayoutPanel33.SuspendLayout();
+            this.tableLayoutPanel34.SuspendLayout();
             this.tableLayoutPanel20.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).BeginInit();
-            this.tableLayoutPanel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -163,8 +180,8 @@ namespace TarhaStore
             this.pill.AllowUserToAddRows = false;
             this.pill.AllowUserToResizeColumns = false;
             this.pill.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arabic Typesetting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arabic Typesetting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.pill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.quantity,
@@ -173,7 +190,6 @@ namespace TarhaStore
             resources.ApplyResources(this.pill, "pill");
             this.pill.MultiSelect = false;
             this.pill.Name = "pill";
-            this.pill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.pill.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.Pill_UserDeletingRow);
             // 
             // quantity
@@ -233,13 +249,11 @@ namespace TarhaStore
             // 
             resources.ApplyResources(this.quantityBox, "quantityBox");
             this.quantityBox.Name = "quantityBox";
-            this.quantityBox.TextChanged += new System.EventHandler(this.quantityBox_TextChanged);
             // 
             // search
             // 
             resources.ApplyResources(this.search, "search");
             this.search.Name = "search";
-            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -247,7 +261,6 @@ namespace TarhaStore
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -285,7 +298,6 @@ namespace TarhaStore
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.pill, 0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // tableLayoutPanel4
             // 
@@ -308,7 +320,6 @@ namespace TarhaStore
             this.btnDiscount.Image = global::TarhaStore.Properties.Resources.apply4;
             this.btnDiscount.Name = "btnDiscount";
             this.btnDiscount.UseVisualStyleBackColor = true;
-            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
             // 
             // tableLayoutPanel14
             // 
@@ -337,7 +348,6 @@ namespace TarhaStore
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel10, 0, 2);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel11, 0, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel7_Paint);
             // 
             // tableLayoutPanel8
             // 
@@ -408,7 +418,6 @@ namespace TarhaStore
             this.tableLayoutPanel19.Controls.Add(this.tableLayoutPanel7, 1, 0);
             this.tableLayoutPanel19.Controls.Add(this.tableLayoutPanel3, 3, 0);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
-            this.tableLayoutPanel19.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel19_Paint);
             // 
             // StockPanel
             // 
@@ -420,58 +429,42 @@ namespace TarhaStore
             // tableLayoutPanel18
             // 
             resources.ApplyResources(this.tableLayoutPanel18, "tableLayoutPanel18");
-            this.tableLayoutPanel18.Controls.Add(this.dataGridView1, 1, 0);
+            this.tableLayoutPanel18.Controls.Add(this.storeDetailsGrid, 1, 0);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             // 
-            // dataGridView1
+            // storeDetailsGrid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.dataGridView1.DataSource = this.itemsBindingSource2;
-            resources.ApplyResources(this.dataGridView1, "dataGridView1");
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.storeDetailsGrid.AllowUserToAddRows = false;
+            this.storeDetailsGrid.AllowUserToDeleteRows = false;
+            this.storeDetailsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.storeDetailsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            resources.ApplyResources(this.storeDetailsGrid, "storeDetailsGrid");
+            this.storeDetailsGrid.Name = "storeDetailsGrid";
+            this.storeDetailsGrid.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // Column4
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "name";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.Column4, "Column4");
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // Column5
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "price";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.Column5, "Column5");
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // Column6
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "quantity";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // itemsBindingSource2
-            // 
-            this.itemsBindingSource2.DataMember = "items";
-            this.itemsBindingSource2.DataSource = this.tarhaDBDataSet;
-            // 
-            // tarhaDBDataSet
-            // 
-            this.tarhaDBDataSet.DataSetName = "TarhaDBDataSet";
-            this.tarhaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.Column6, "Column6");
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // tableLayoutPanel16
             // 
@@ -507,34 +500,252 @@ namespace TarhaStore
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
-            // itemsTableAdapter
-            // 
-            this.itemsTableAdapter.ClearBeforeFill = true;
-            // 
             // AdminPanel
             // 
-            this.AdminPanel.Controls.Add(this.deleteTpe);
-            this.AdminPanel.Controls.Add(this.editByPriceBtn);
-            this.AdminPanel.Controls.Add(this.editByQuantityBtn);
-            this.AdminPanel.Controls.Add(this.editBynameBtn);
-            this.AdminPanel.Controls.Add(this.editingValue);
-            this.AdminPanel.Controls.Add(this.label14);
-            this.AdminPanel.Controls.Add(this.searchBynameEditing);
-            this.AdminPanel.Controls.Add(this.label13);
-            this.AdminPanel.Controls.Add(this.addingTypebtn);
-            this.AdminPanel.Controls.Add(this.addingTypePrice);
-            this.AdminPanel.Controls.Add(this.addingTypeQuantity);
-            this.AdminPanel.Controls.Add(this.addingTypeName);
-            this.AdminPanel.Controls.Add(this.label12);
-            this.AdminPanel.Controls.Add(this.label11);
-            this.AdminPanel.Controls.Add(this.label10);
-            this.AdminPanel.Controls.Add(this.label9);
-            this.AdminPanel.Controls.Add(this.label8);
-            this.AdminPanel.Controls.Add(this.label7);
-            this.AdminPanel.Controls.Add(this.tableLayoutPanel22);
+            this.AdminPanel.Controls.Add(this.tableLayoutPanel35);
             this.AdminPanel.Controls.Add(this.tableLayoutPanel20);
             resources.ApplyResources(this.AdminPanel, "AdminPanel");
             this.AdminPanel.Name = "AdminPanel";
+            // 
+            // tableLayoutPanel35
+            // 
+            resources.ApplyResources(this.tableLayoutPanel35, "tableLayoutPanel35");
+            this.tableLayoutPanel35.Controls.Add(this.tableLayoutPanel22, 0, 0);
+            this.tableLayoutPanel35.Controls.Add(this.tableLayoutPanel23, 1, 0);
+            this.tableLayoutPanel35.Name = "tableLayoutPanel35";
+            // 
+            // tableLayoutPanel22
+            // 
+            resources.ApplyResources(this.tableLayoutPanel22, "tableLayoutPanel22");
+            this.tableLayoutPanel22.Controls.Add(this.adminGrid, 0, 0);
+            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
+            // 
+            // adminGrid
+            // 
+            this.adminGrid.AllowUserToAddRows = false;
+            this.adminGrid.AllowUserToDeleteRows = false;
+            this.adminGrid.AllowUserToOrderColumns = true;
+            this.adminGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.adminGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column3,
+            this.Column2,
+            this.Column1});
+            resources.ApplyResources(this.adminGrid, "adminGrid");
+            this.adminGrid.Name = "adminGrid";
+            this.adminGrid.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.Column3, "Column3");
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.Column2, "Column2");
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.Column1, "Column1");
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // tableLayoutPanel23
+            // 
+            resources.ApplyResources(this.tableLayoutPanel23, "tableLayoutPanel23");
+            this.tableLayoutPanel23.Controls.Add(this.label7, 0, 1);
+            this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel24, 0, 0);
+            this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel29, 0, 2);
+            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.SystemColors.ControlDark;
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
+            // tableLayoutPanel24
+            // 
+            resources.ApplyResources(this.tableLayoutPanel24, "tableLayoutPanel24");
+            this.tableLayoutPanel24.Controls.Add(this.label8, 0, 0);
+            this.tableLayoutPanel24.Controls.Add(this.tableLayoutPanel25, 0, 2);
+            this.tableLayoutPanel24.Controls.Add(this.tableLayoutPanel26, 0, 1);
+            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // tableLayoutPanel25
+            // 
+            resources.ApplyResources(this.tableLayoutPanel25, "tableLayoutPanel25");
+            this.tableLayoutPanel25.Controls.Add(this.addingTypebtn, 1, 0);
+            this.tableLayoutPanel25.Name = "tableLayoutPanel25";
+            // 
+            // addingTypebtn
+            // 
+            resources.ApplyResources(this.addingTypebtn, "addingTypebtn");
+            this.addingTypebtn.Name = "addingTypebtn";
+            this.addingTypebtn.UseVisualStyleBackColor = true;
+            this.addingTypebtn.Click += new System.EventHandler(this.addingTypebtn_Click);
+            // 
+            // tableLayoutPanel26
+            // 
+            resources.ApplyResources(this.tableLayoutPanel26, "tableLayoutPanel26");
+            this.tableLayoutPanel26.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel26.Controls.Add(this.label10, 4, 0);
+            this.tableLayoutPanel26.Controls.Add(this.addingTypeName, 4, 1);
+            this.tableLayoutPanel26.Controls.Add(this.label11, 2, 0);
+            this.tableLayoutPanel26.Controls.Add(this.tableLayoutPanel27, 2, 1);
+            this.tableLayoutPanel26.Controls.Add(this.tableLayoutPanel28, 0, 1);
+            this.tableLayoutPanel26.Name = "tableLayoutPanel26";
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.Name = "label12";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
+            // addingTypeName
+            // 
+            resources.ApplyResources(this.addingTypeName, "addingTypeName");
+            this.addingTypeName.Name = "addingTypeName";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
+            // tableLayoutPanel27
+            // 
+            resources.ApplyResources(this.tableLayoutPanel27, "tableLayoutPanel27");
+            this.tableLayoutPanel27.Controls.Add(this.addingTypeQuantity, 1, 0);
+            this.tableLayoutPanel27.Name = "tableLayoutPanel27";
+            // 
+            // addingTypeQuantity
+            // 
+            resources.ApplyResources(this.addingTypeQuantity, "addingTypeQuantity");
+            this.addingTypeQuantity.Name = "addingTypeQuantity";
+            // 
+            // tableLayoutPanel28
+            // 
+            resources.ApplyResources(this.tableLayoutPanel28, "tableLayoutPanel28");
+            this.tableLayoutPanel28.Controls.Add(this.addingTypePrice, 1, 0);
+            this.tableLayoutPanel28.Name = "tableLayoutPanel28";
+            // 
+            // addingTypePrice
+            // 
+            resources.ApplyResources(this.addingTypePrice, "addingTypePrice");
+            this.addingTypePrice.Name = "addingTypePrice";
+            // 
+            // tableLayoutPanel29
+            // 
+            resources.ApplyResources(this.tableLayoutPanel29, "tableLayoutPanel29");
+            this.tableLayoutPanel29.Controls.Add(this.label9, 0, 0);
+            this.tableLayoutPanel29.Controls.Add(this.tableLayoutPanel30, 0, 1);
+            this.tableLayoutPanel29.Controls.Add(this.tableLayoutPanel32, 0, 2);
+            this.tableLayoutPanel29.Controls.Add(this.tableLayoutPanel34, 0, 3);
+            this.tableLayoutPanel29.Name = "tableLayoutPanel29";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
+            // tableLayoutPanel30
+            // 
+            resources.ApplyResources(this.tableLayoutPanel30, "tableLayoutPanel30");
+            this.tableLayoutPanel30.Controls.Add(this.label13, 1, 0);
+            this.tableLayoutPanel30.Controls.Add(this.tableLayoutPanel31, 0, 0);
+            this.tableLayoutPanel30.Name = "tableLayoutPanel30";
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.Name = "label13";
+            // 
+            // tableLayoutPanel31
+            // 
+            resources.ApplyResources(this.tableLayoutPanel31, "tableLayoutPanel31");
+            this.tableLayoutPanel31.Controls.Add(this.searchBynameEditing, 1, 1);
+            this.tableLayoutPanel31.Name = "tableLayoutPanel31";
+            // 
+            // searchBynameEditing
+            // 
+            resources.ApplyResources(this.searchBynameEditing, "searchBynameEditing");
+            this.searchBynameEditing.Name = "searchBynameEditing";
+            // 
+            // tableLayoutPanel32
+            // 
+            resources.ApplyResources(this.tableLayoutPanel32, "tableLayoutPanel32");
+            this.tableLayoutPanel32.Controls.Add(this.label14, 1, 0);
+            this.tableLayoutPanel32.Controls.Add(this.tableLayoutPanel33, 0, 0);
+            this.tableLayoutPanel32.Name = "tableLayoutPanel32";
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // tableLayoutPanel33
+            // 
+            resources.ApplyResources(this.tableLayoutPanel33, "tableLayoutPanel33");
+            this.tableLayoutPanel33.Controls.Add(this.editingValue, 1, 1);
+            this.tableLayoutPanel33.Name = "tableLayoutPanel33";
+            // 
+            // editingValue
+            // 
+            resources.ApplyResources(this.editingValue, "editingValue");
+            this.editingValue.Name = "editingValue";
+            // 
+            // tableLayoutPanel34
+            // 
+            resources.ApplyResources(this.tableLayoutPanel34, "tableLayoutPanel34");
+            this.tableLayoutPanel34.Controls.Add(this.editBynameBtn, 3, 0);
+            this.tableLayoutPanel34.Controls.Add(this.deleteTpe, 0, 0);
+            this.tableLayoutPanel34.Controls.Add(this.editByQuantityBtn, 2, 0);
+            this.tableLayoutPanel34.Controls.Add(this.editByPriceBtn, 1, 0);
+            this.tableLayoutPanel34.Name = "tableLayoutPanel34";
+            // 
+            // editBynameBtn
+            // 
+            resources.ApplyResources(this.editBynameBtn, "editBynameBtn");
+            this.editBynameBtn.Name = "editBynameBtn";
+            this.editBynameBtn.UseVisualStyleBackColor = true;
+            this.editBynameBtn.Click += new System.EventHandler(this.editBynameBtn_Click);
+            // 
+            // deleteTpe
+            // 
+            resources.ApplyResources(this.deleteTpe, "deleteTpe");
+            this.deleteTpe.BackColor = System.Drawing.Color.Red;
+            this.deleteTpe.ForeColor = System.Drawing.Color.Snow;
+            this.deleteTpe.Name = "deleteTpe";
+            this.deleteTpe.UseVisualStyleBackColor = false;
+            this.deleteTpe.Click += new System.EventHandler(this.deleteTpe_Click);
+            // 
+            // editByQuantityBtn
+            // 
+            resources.ApplyResources(this.editByQuantityBtn, "editByQuantityBtn");
+            this.editByQuantityBtn.Name = "editByQuantityBtn";
+            this.editByQuantityBtn.UseVisualStyleBackColor = true;
+            this.editByQuantityBtn.Click += new System.EventHandler(this.editByQuantityBtn_Click);
+            // 
+            // editByPriceBtn
+            // 
+            resources.ApplyResources(this.editByPriceBtn, "editByPriceBtn");
+            this.editByPriceBtn.Name = "editByPriceBtn";
+            this.editByPriceBtn.UseVisualStyleBackColor = true;
+            this.editByPriceBtn.Click += new System.EventHandler(this.editByPriceBtn_Click);
             // 
             // tableLayoutPanel20
             // 
@@ -570,155 +781,23 @@ namespace TarhaStore
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.TabStop = false;
             // 
-            // tableLayoutPanel22
+            // printDocument1
             // 
-            resources.ApplyResources(this.tableLayoutPanel22, "tableLayoutPanel22");
-            this.tableLayoutPanel22.Controls.Add(this.dataGridView2, 0, 0);
-            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // dataGridView2
+            // printPreviewDialog1
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToOrderColumns = true;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn4});
-            this.dataGridView2.DataSource = this.itemsBindingSource2;
-            resources.ApplyResources(this.dataGridView2, "dataGridView2");
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "price";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "quantity";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "name";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.SystemColors.ControlDark;
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
-            // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
-            // 
-            // label9
-            // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
-            // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
-            // 
-            // label12
-            // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.Name = "label12";
-            // 
-            // addingTypeName
-            // 
-            resources.ApplyResources(this.addingTypeName, "addingTypeName");
-            this.addingTypeName.Name = "addingTypeName";
-            // 
-            // addingTypeQuantity
-            // 
-            resources.ApplyResources(this.addingTypeQuantity, "addingTypeQuantity");
-            this.addingTypeQuantity.Name = "addingTypeQuantity";
-            // 
-            // addingTypePrice
-            // 
-            resources.ApplyResources(this.addingTypePrice, "addingTypePrice");
-            this.addingTypePrice.Name = "addingTypePrice";
-            // 
-            // addingTypebtn
-            // 
-            resources.ApplyResources(this.addingTypebtn, "addingTypebtn");
-            this.addingTypebtn.Name = "addingTypebtn";
-            this.addingTypebtn.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.Name = "label13";
-            // 
-            // searchBynameEditing
-            // 
-            resources.ApplyResources(this.searchBynameEditing, "searchBynameEditing");
-            this.searchBynameEditing.Name = "searchBynameEditing";
-            // 
-            // label14
-            // 
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.Name = "label14";
-            // 
-            // editingValue
-            // 
-            resources.ApplyResources(this.editingValue, "editingValue");
-            this.editingValue.Name = "editingValue";
-            // 
-            // editBynameBtn
-            // 
-            resources.ApplyResources(this.editBynameBtn, "editBynameBtn");
-            this.editBynameBtn.Name = "editBynameBtn";
-            this.editBynameBtn.UseVisualStyleBackColor = true;
-            // 
-            // editByQuantityBtn
-            // 
-            resources.ApplyResources(this.editByQuantityBtn, "editByQuantityBtn");
-            this.editByQuantityBtn.Name = "editByQuantityBtn";
-            this.editByQuantityBtn.UseVisualStyleBackColor = true;
-            // 
-            // editByPriceBtn
-            // 
-            resources.ApplyResources(this.editByPriceBtn, "editByPriceBtn");
-            this.editByPriceBtn.Name = "editByPriceBtn";
-            this.editByPriceBtn.UseVisualStyleBackColor = true;
-            // 
-            // deleteTpe
-            // 
-            resources.ApplyResources(this.deleteTpe, "deleteTpe");
-            this.deleteTpe.Name = "deleteTpe";
-            this.deleteTpe.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.printPreviewDialog1, "printPreviewDialog1");
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
             // 
             // mainView
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.StockPanel);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.AdminPanel);
+            this.Controls.Add(this.StockPanel);
             this.Name = "mainView";
             this.Load += new System.EventHandler(this.form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pill)).EndInit();
@@ -750,21 +829,39 @@ namespace TarhaStore
             this.tableLayoutPanel19.ResumeLayout(false);
             this.StockPanel.ResumeLayout(false);
             this.tableLayoutPanel18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tarhaDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storeDetailsGrid)).EndInit();
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.AdminPanel.ResumeLayout(false);
-            this.AdminPanel.PerformLayout();
+            this.tableLayoutPanel35.ResumeLayout(false);
+            this.tableLayoutPanel22.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.adminGrid)).EndInit();
+            this.tableLayoutPanel23.ResumeLayout(false);
+            this.tableLayoutPanel24.ResumeLayout(false);
+            this.tableLayoutPanel24.PerformLayout();
+            this.tableLayoutPanel25.ResumeLayout(false);
+            this.tableLayoutPanel26.ResumeLayout(false);
+            this.tableLayoutPanel26.PerformLayout();
+            this.tableLayoutPanel27.ResumeLayout(false);
+            this.tableLayoutPanel27.PerformLayout();
+            this.tableLayoutPanel28.ResumeLayout(false);
+            this.tableLayoutPanel28.PerformLayout();
+            this.tableLayoutPanel29.ResumeLayout(false);
+            this.tableLayoutPanel29.PerformLayout();
+            this.tableLayoutPanel30.ResumeLayout(false);
+            this.tableLayoutPanel30.PerformLayout();
+            this.tableLayoutPanel31.ResumeLayout(false);
+            this.tableLayoutPanel31.PerformLayout();
+            this.tableLayoutPanel32.ResumeLayout(false);
+            this.tableLayoutPanel32.PerformLayout();
+            this.tableLayoutPanel33.ResumeLayout(false);
+            this.tableLayoutPanel33.PerformLayout();
+            this.tableLayoutPanel34.ResumeLayout(false);
+            this.tableLayoutPanel34.PerformLayout();
             this.tableLayoutPanel20.ResumeLayout(false);
             this.tableLayoutPanel21.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).EndInit();
-            this.tableLayoutPanel22.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -787,8 +884,6 @@ namespace TarhaStore
         private System.Windows.Forms.TextBox quantityBox;
         private System.Windows.Forms.Button print;
         private System.Windows.Forms.TextBox search;
-        private System.Windows.Forms.BindingSource itemsBindingSource;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
@@ -810,17 +905,13 @@ namespace TarhaStore
         private System.Windows.Forms.Panel StockPanel;
         private System.Windows.Forms.Button back;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView storeDetailsGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource itemsBindingSource1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
-        private TarhaDBDataSet tarhaDBDataSet;
-        private System.Windows.Forms.BindingSource itemsBindingSource2;
-        private TarhaDBDataSetTableAdapters.itemsTableAdapter itemsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -834,28 +925,49 @@ namespace TarhaStore
         private System.Windows.Forms.Button backFromAdmin;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView adminGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox searchBynameEditing;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button addingTypebtn;
-        private System.Windows.Forms.TextBox addingTypePrice;
-        private System.Windows.Forms.TextBox addingTypeQuantity;
-        private System.Windows.Forms.TextBox addingTypeName;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button deleteTpe;
         private System.Windows.Forms.Button editByPriceBtn;
         private System.Windows.Forms.Button editByQuantityBtn;
         private System.Windows.Forms.Button editBynameBtn;
         private System.Windows.Forms.TextBox editingValue;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button addingTypebtn;
+        private System.Windows.Forms.TextBox addingTypeName;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox addingTypeQuantity;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox addingTypePrice;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel29;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel30;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel31;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel32;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel33;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel34;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel35;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
 
