@@ -31,7 +31,7 @@ namespace TarhaStore
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainView));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.pill = new System.Windows.Forms.DataGridView();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -180,8 +180,8 @@ namespace TarhaStore
             this.pill.AllowUserToAddRows = false;
             this.pill.AllowUserToResizeColumns = false;
             this.pill.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arabic Typesetting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arabic Typesetting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.pill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.quantity,
@@ -799,6 +799,7 @@ namespace TarhaStore
             this.Controls.Add(this.AdminPanel);
             this.Controls.Add(this.StockPanel);
             this.Name = "mainView";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pill)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);

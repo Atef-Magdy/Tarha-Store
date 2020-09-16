@@ -25,7 +25,6 @@ namespace TarhaStore
         {
             InitializeComponent();
         }
-
         // Main from (Load)
         private void form1_Load(object sender, EventArgs e)
         {
@@ -76,19 +75,21 @@ namespace TarhaStore
             String name = "";
             int quantity = 0;
             int price = 0;
+            int realQuantity = 0;
+            int newQuantity = 0;
 
             SqlConnection connection;
             SqlCommand command;
-            
-            if(!search.Text.Equals("") && !quantityBox.Text.Equals(""))
+            string sql = "SELECT price from [TarhaDB].[dbo].[items] where name = N'" + search.Text + "' ";
+            connection = new SqlConnection(connetionString);
+            command = new SqlCommand(sql, connection);
+            SqlDataReader reader;
+            SqlDataReader DBQuantityReader;
+
+            if (!search.Text.Equals("") && !quantityBox.Text.Equals(""))
             {
-               
-                string sql = "SELECT price from [TarhaDB].[dbo].[items] where name = N'" + search.Text + "' ";
-                connection = new SqlConnection(connetionString);
-                command = new SqlCommand(sql, connection);
                 connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                
+                reader = command.ExecuteReader();
                 if (!reader.Read())
                 {
                     MessageBox.Show("لا يوجد منتج بهذا الأسم");
@@ -108,6 +109,7 @@ namespace TarhaStore
                 {
                     check2 = true;
                 }
+
                 connection.Close();
             }
             else
@@ -117,16 +119,46 @@ namespace TarhaStore
 
             if(check1 && check2)
             {
-                DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(pill);
-                row.Cells[2].Value = name;
-                row.Cells[1].Value = price;
-                row.Cells[0].Value = quantity;
-                pill.Rows.Add(row);
-                search.Text = "";
-                quantityBox.Text = "";
-                totalPrice += price*quantity;
-                total.Text = totalPrice.ToString();
+                connection.Open();
+                sql = "SELECT quantity from [TarhaDB].[dbo].[items] where name = N'" + search.Text + "'";
+                command = new SqlCommand(sql, connection);
+                DBQuantityReader = command.ExecuteReader();
+                if(DBQuantityReader.Read())
+                {
+                    //Real quantity in DB
+                    realQuantity = DBQuantityReader.GetInt32(0);
+                    connection.Close();
+                    //Check if quantity in database is enough for the order
+                    if (realQuantity >= quantity)
+                    {
+                        //Adding the order to the pill(dataGridView)
+                        DataGridViewRow row = new DataGridViewRow();
+                        row.CreateCells(pill);
+                        row.Cells[2].Value = name;
+                        row.Cells[1].Value = price*quantity;
+                        row.Cells[0].Value = quantity;
+                        pill.Rows.Add(row);
+                        totalPrice += price * quantity;
+                        total.Text = totalPrice.ToString();
+
+                        //Calculate the new quantity to update database by it
+                        newQuantity = realQuantity - quantity;
+                        connection.Open();
+                        sql = "UPDATE [TarhaDB].[dbo].[items] SET quantity = '" + newQuantity + "' WHERE name = N'" + search.Text + "'";
+                        command = new SqlCommand(sql, connection);
+                        command.ExecuteNonQuery();
+                        command.Dispose();
+                        
+                        //Clear fields
+                        search.Text = "";
+                        quantityBox.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("لا توجد كمية كافية ف المخزن، أضف كمية أولاُ");
+                    }
+                }
+                connection.Close();
             }
         }
         //---------------------------------------------------------------------------------------------
@@ -134,12 +166,43 @@ namespace TarhaStore
         //Remove raw in main panel datagrid view
         private void Pill_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
+            //Update Total number
             int numberOfRaws = pill.SelectedRows.Count;
             int price, quantity;
             price = (int)pill.SelectedRows[0].Cells[1].Value;
             quantity = (int)pill.SelectedRows[0].Cells[0].Value;
             totalPrice -= price * quantity;
             total.Text = totalPrice.ToString();
+
+            //Update DB number
+            SqlConnection connection;
+            SqlCommand command;
+            SqlDataReader reader;
+
+            String name = pill.SelectedRows[0].Cells[2].Value.ToString();
+            int realQuantity;
+
+            string sql = "SELECT quantity from [TarhaDB].[dbo].[items] where name = N'" + name + "' ";
+            connection = new SqlConnection(connetionString);
+            command = new SqlCommand(sql, connection);
+            connection.Open();
+            reader = command.ExecuteReader();
+            
+            if(reader.Read())
+            {
+                realQuantity = reader.GetInt32(0);
+                realQuantity += quantity;
+                
+                connection.Close();
+
+                connection.Open();
+                
+                sql = "UPDATE [TarhaDB].[dbo].[items] SET quantity = '" + realQuantity + "' WHERE name = N'" + name + "'";
+                command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+                command.Dispose();
+            }
+            connection.Close();
         }
         //---------------------------------------------------------------------------------------------
 
@@ -542,6 +605,55 @@ namespace TarhaStore
             SizeF footerSize = e.Graphics.MeasureString("زورونا عبر الفيس بوك : طرحة", footerFont);
             e.Graphics.DrawString("زورونا عبر الفيس بوك : طرحة", footerFont, Brushes.Black, (pWidth - footerSize.Width) / 2, footerPreheight + 35);
 
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing || e.CloseReason == CloseReason.WindowsShutDown)
+            {
+                SqlConnection connection;
+                SqlCommand command;
+                SqlDataReader reader;
+                connection = new SqlConnection(connetionString);
+                String sql;
+                String name;
+                int quantity;
+                ArrayList DBQuantity = new ArrayList();
+                Boolean checkUpdate = false;
+
+                connection.Open();
+
+                for (int i = 0; i < pill.Rows.Count; i++)
+                {
+                    String selectName = pill.Rows[i].Cells[2].Value.ToString();
+                    sql = "SELECT quantity from [TarhaDB].[dbo].[items] where name = N'" + selectName + "'";
+                    command = new SqlCommand(sql, connection);
+                    reader = command.ExecuteReader();
+                    if(reader.Read())
+                    {
+                        checkUpdate = true;
+                        MessageBox.Show("تم إرجاع الطلبات إلي قاعدة البيانات");
+                        DBQuantity.Add(reader.GetInt32(0));
+                    }
+                }
+                connection.Close();
+
+                if(checkUpdate)
+                {
+                    connection.Open();
+                    for (int i = 0; i < pill.Rows.Count; i++)
+                    {
+                        name = pill.Rows[i].Cells[2].Value.ToString();
+                        quantity = (int)pill.Rows[i].Cells[0].Value;
+                        quantity += (int)DBQuantity[i];
+                        sql = "UPDATE [TarhaDB].[dbo].[items] SET quantity = '"+ quantity +"' WHERE name = N'" + name + "'";
+                        command = new SqlCommand(sql, connection);
+                        command.ExecuteNonQuery();
+                        command.Dispose();
+                    }
+                    connection.Close();
+                }
+            }
         }
     }
 }
