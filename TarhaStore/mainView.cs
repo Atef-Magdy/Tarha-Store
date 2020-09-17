@@ -19,6 +19,8 @@ namespace TarhaStore
         private static ArrayList listName = new ArrayList();
         private static ArrayList listQuantity = new ArrayList();
         private static ArrayList listPrice = new ArrayList();
+        Boolean checkDiscount = false;
+        String discountPrecentage = "";
 
 
         public mainView()
@@ -171,7 +173,7 @@ namespace TarhaStore
             int price, quantity;
             price = (int)pill.SelectedRows[0].Cells[1].Value;
             quantity = (int)pill.SelectedRows[0].Cells[0].Value;
-            totalPrice -= price * quantity;
+            totalPrice -= price;
             total.Text = totalPrice.ToString();
 
             //Update DB number
@@ -227,13 +229,12 @@ namespace TarhaStore
                 , title = "رمز دخول المسئول";
             object myValue;
             myValue = Interaction.InputBox(message, title);
-            if((String)myValue == "yasmine&moustfa")
+            if((String)myValue == "yasmin&moustafa")
             {
                 panels[2].BringToFront();
                 GetData();
                 updateDatagrid(adminGrid);
             }
-            
         }
         //Back from admin
         private void backFromAdmin_Click_1(object sender, EventArgs e)
@@ -244,9 +245,17 @@ namespace TarhaStore
         //Print Button
         private void print_Click(object sender, EventArgs e)
         {
+            /*
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
-           
+           */
+            printDocument1.PrinterSettings.PrinterName = "POS-80";
+            printDocument1.PrinterSettings.Copies = 2;
+            printDocument1.Print();
+            pill.Rows.Clear();
+            total.Text = "";
+            totalPrice = 0;
+            
         }
 
 
@@ -337,6 +346,7 @@ namespace TarhaStore
                         GetData();
                         updateDatagrid(adminGrid);
                         autoComplete();
+                        addingTypeName.Text = addingTypePrice.Text = addingTypeQuantity.Text = "";
                     }
                     catch (Exception ex)
                     {
@@ -383,12 +393,14 @@ namespace TarhaStore
                     GetData();
                     updateDatagrid(adminGrid);
                     autoComplete();
+                    searchBynameEditing.Text = editingValue.Text = "";
                 }
                 else
                 {
                     MessageBox.Show("يوجد أحد المتطلبات فارغة ");
                 }
             }
+            connection.Close();
         }
 
         private void editByQuantityBtn_Click(object sender, EventArgs e)
@@ -423,12 +435,14 @@ namespace TarhaStore
 
                     GetData();
                     updateDatagrid(adminGrid);
+                    searchBynameEditing.Text = editingValue.Text = "";
                 }
                 else
                 {
                     MessageBox.Show("يجب إدخال رقم في خانة التعديل ");
                 }
             }
+            connection.Close();
         }
 
         private void editByPriceBtn_Click(object sender, EventArgs e)
@@ -463,12 +477,14 @@ namespace TarhaStore
 
                     GetData();
                     updateDatagrid(adminGrid);
+                    searchBynameEditing.Text = editingValue.Text = "";
                 }
                 else
                 {
                     MessageBox.Show("يجب إدخال رقم في خانة التعديل ");
                 }
             }
+            connection.Close();
         }
 
         private void deleteTpe_Click(object sender, EventArgs e)
@@ -501,7 +517,9 @@ namespace TarhaStore
                 GetData();
                 updateDatagrid(adminGrid);
                 autoComplete();
+                searchBynameEditing.Text = editingValue.Text = "";
             }
+            connection.Close();
         }
 
         private void tableLayoutPanel24_Paint(object sender, PaintEventArgs e)
@@ -509,6 +527,7 @@ namespace TarhaStore
 
         }
 
+        //Pill Drawing
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             //Page boundries
@@ -519,30 +538,25 @@ namespace TarhaStore
             Font logoFont = new Font("Arial", 34, FontStyle.Italic);
             SizeF logoSize = e.Graphics.MeasureString("طرحة", logoFont);
 
-            //Date
+            Font subLogo = new Font("Arial", 16, FontStyle.Bold);
+            SizeF subLogoSize = e.Graphics.MeasureString("ياسمين", subLogo);
+
+            //Date details
             String date = DateTime.Now.ToString("dd/MM/yyy H:mm");
             date += " : التاريخ";
             Font dateFont = new Font("Arial", 16, FontStyle.Regular);
             SizeF dateSize = e.Graphics.MeasureString(date, dateFont);
 
-            //Header
+            //Header Drawing
             e.Graphics.DrawString("طرحة", logoFont, Brushes.Black, (pWidth - logoSize.Width) / 2, 10);
-            
-            // SubLogo
-            Font subLogo = new Font("Arial", 16, FontStyle.Bold);
-            SizeF subLogoSize = e.Graphics.MeasureString("ياسمين", subLogo);
             e.Graphics.DrawString("ياسمين", subLogo, Brushes.Black, (pWidth - logoSize.Width) / 2 - subLogoSize.Width + 10, 30);
-
             e.Graphics.DrawString(date, dateFont, Brushes.Black, (pWidth - dateSize.Width) / 2, logoSize.Height+15);
-
-
-            
 
             //Line
             float headerPreHeight = 10 + logoSize.Height + 5 + dateSize.Height;
             e.Graphics.DrawLine(Pens.Black, 0,headerPreHeight, pWidth , headerPreHeight);
 
-            //Body
+            //Pill Header
             Font bodyFont = new Font("Arial", 14, FontStyle.Regular);
             String gridName = "الاسم";
             String gridQuantity = "العدد";
@@ -556,7 +570,7 @@ namespace TarhaStore
             e.Graphics.DrawString(gridQuantity,bodyFont, Brushes.Black,(pWidth-quantitySize.Width)-(3*pWidth/4),headerPreHeight+ 2);
 
           
-            //Date Grid
+            //Pill DataGrid
             SizeF cellSize;
             Boolean name = true , quantity = false , price = false;
             float bodyPreHeight = headerPreHeight + 5;
@@ -590,20 +604,52 @@ namespace TarhaStore
                     }
                 }
             }
-            float footerPreheight = bodyPreHeight + 25;
-            SizeF totalName = e.Graphics.MeasureString("الإجمالي", bodyFont);
+            //Line
+            e.Graphics.DrawLine(Pens.Black, 0, bodyPreHeight+25, pWidth, bodyPreHeight+25);
+            
+            //Total Section
+            float footerPreheight = bodyPreHeight +35;
+            SizeF totalName = e.Graphics.MeasureString(" : الإجمالي", bodyFont);
             String totalString = total.Text.ToString();
             SizeF totalStringSize = e.Graphics.MeasureString(totalString, bodyFont);
-            
-            e.Graphics.DrawLine(Pens.Black, 0, footerPreheight, pWidth, footerPreheight);
-            footerPreheight += 10;
             float totalWidthMargin = pWidth - totalName.Width - totalStringSize.Width - 10;
-            e.Graphics.DrawString("الإجمالي", bodyFont, Brushes.Black, pWidth-totalName.Width , footerPreheight);
+
+            e.Graphics.DrawString(" : الإجمالي", bodyFont, Brushes.Black, pWidth-totalName.Width , footerPreheight);
             e.Graphics.DrawString(totalString, bodyFont, Brushes.Black,totalWidthMargin , footerPreheight);
+
+            //Seller Name
+            String seller = sellerName.Text;
+            String sellerLabel = " : البائع";
+            SizeF sellerSize = e.Graphics.MeasureString(seller, bodyFont);
+            SizeF sellerLabelSize = e.Graphics.MeasureString(sellerLabel, bodyFont);
+
+            e.Graphics.DrawString(sellerLabel, bodyFont, Brushes.Black, (pWidth - sellerLabelSize.Width) - (pWidth / 2), footerPreheight);
+            e.Graphics.DrawString(seller, bodyFont, Brushes.Black, (pWidth - sellerLabelSize.Width) - (pWidth / 2) - sellerSize.Width, footerPreheight);
+
+            //Line
             e.Graphics.DrawLine(Pens.Black, 0, footerPreheight+30, pWidth, footerPreheight+30);
+            
+            //Discount Section
             Font footerFont = new Font("Arial", 10, FontStyle.Regular);
+            if(checkDiscount)
+            {
+                String discoutName = " : الخصم";
+                SizeF discoutnNameSize = e.Graphics.MeasureString(discoutName , bodyFont);
+                SizeF discountValueSize = e.Graphics.MeasureString(discountPrecentage, bodyFont);
+
+                e.Graphics.DrawString(discoutName, bodyFont, Brushes.Black, pWidth - discoutnNameSize.Width, footerPreheight +40);
+                e.Graphics.DrawString(discountPrecentage, bodyFont, Brushes.Black, pWidth - discoutnNameSize.Width - discountValueSize.Width - 10, footerPreheight + 40);
+            }
+
+            //Footer
             SizeF footerSize = e.Graphics.MeasureString("زورونا عبر الفيس بوك : طرحة", footerFont);
-            e.Graphics.DrawString("زورونا عبر الفيس بوك : طرحة", footerFont, Brushes.Black, (pWidth - footerSize.Width) / 2, footerPreheight + 35);
+            if(checkDiscount)
+            {
+                e.Graphics.DrawLine(Pens.Black, 0, footerPreheight + 65, pWidth, footerPreheight + 65);
+                e.Graphics.DrawString("زورونا عبر الفيس بوك : طرحة", footerFont, Brushes.Black, (pWidth - footerSize.Width) / 2, footerPreheight + 70);
+            }
+            else
+                e.Graphics.DrawString("زورونا عبر الفيس بوك : طرحة", footerFont, Brushes.Black, (pWidth - footerSize.Width) / 2, footerPreheight + 35);
 
         }
 
@@ -652,6 +698,62 @@ namespace TarhaStore
                         command.Dispose();
                     }
                     connection.Close();
+                }
+            }
+        }
+
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+            string discountValue;
+            int realDiscount;
+            if(!total.Text.Equals(""))
+            {
+                int newTotal, currentTotal = int.Parse(total.Text);
+                discountValue = discount.Text;
+                if(discountValue == "yasmin10")
+                {
+                    checkDiscount = true;
+                    realDiscount = 10 * currentTotal / 100;
+                    newTotal = currentTotal - realDiscount;
+                    total.Text = newTotal.ToString();
+                    discount.Text = "";
+                    discountPrecentage = "10%";
+                }
+                if (discountValue == "yasmin15")
+                {
+                    checkDiscount = true;
+                    realDiscount = 15 * currentTotal / 100;
+                    newTotal = currentTotal - realDiscount;
+                    total.Text = newTotal.ToString();
+                    discount.Text = "";
+                    discountPrecentage = "15%";
+                }
+                if (discountValue == "yasmin20")
+                {
+                    checkDiscount = true;
+                    realDiscount = 20 * currentTotal / 100;
+                    newTotal = currentTotal - realDiscount;
+                    total.Text = newTotal.ToString();
+                    discount.Text = "";
+                    discountPrecentage = "20%";
+                }
+                if (discountValue == "yasmin25")
+                {
+                    checkDiscount = true;
+                    realDiscount = 25 * currentTotal / 100;
+                    newTotal = currentTotal - realDiscount;
+                    total.Text = newTotal.ToString();
+                    discount.Text = "";
+                    discountPrecentage = "25%";
+                }
+                if (discountValue == "yasmin30")
+                {
+                    checkDiscount = true;
+                    realDiscount = 30 * currentTotal / 100;
+                    newTotal = currentTotal - realDiscount;
+                    total.Text = newTotal.ToString();
+                    discount.Text = "";
+                    discountPrecentage = "30%";
                 }
             }
         }

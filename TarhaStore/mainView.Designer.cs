@@ -31,7 +31,7 @@ namespace TarhaStore
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainView));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.pill = new System.Windows.Forms.DataGridView();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +66,9 @@ namespace TarhaStore
             this.add = new System.Windows.Forms.Button();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.print = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel36 = new System.Windows.Forms.TableLayoutPanel();
+            this.sellerName = new System.Windows.Forms.TextBox();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.StockPanel = new System.Windows.Forms.Panel();
@@ -122,7 +125,6 @@ namespace TarhaStore
             this.backFromAdmin = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pill)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -140,6 +142,7 @@ namespace TarhaStore
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
+            this.tableLayoutPanel36.SuspendLayout();
             this.MainPanel.SuspendLayout();
             this.tableLayoutPanel19.SuspendLayout();
             this.StockPanel.SuspendLayout();
@@ -180,8 +183,8 @@ namespace TarhaStore
             this.pill.AllowUserToAddRows = false;
             this.pill.AllowUserToResizeColumns = false;
             this.pill.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arabic Typesetting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arabic Typesetting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.pill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.quantity,
@@ -320,6 +323,7 @@ namespace TarhaStore
             this.btnDiscount.Image = global::TarhaStore.Properties.Resources.apply4;
             this.btnDiscount.Name = "btnDiscount";
             this.btnDiscount.UseVisualStyleBackColor = true;
+            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
             // 
             // tableLayoutPanel14
             // 
@@ -395,6 +399,8 @@ namespace TarhaStore
             // 
             resources.ApplyResources(this.tableLayoutPanel11, "tableLayoutPanel11");
             this.tableLayoutPanel11.Controls.Add(this.print, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.label15, 2, 1);
+            this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel36, 1, 1);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             // 
             // print
@@ -404,6 +410,22 @@ namespace TarhaStore
             this.print.Name = "print";
             this.print.UseVisualStyleBackColor = true;
             this.print.Click += new System.EventHandler(this.print_Click);
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.Name = "label15";
+            // 
+            // tableLayoutPanel36
+            // 
+            resources.ApplyResources(this.tableLayoutPanel36, "tableLayoutPanel36");
+            this.tableLayoutPanel36.Controls.Add(this.sellerName, 0, 1);
+            this.tableLayoutPanel36.Name = "tableLayoutPanel36";
+            // 
+            // sellerName
+            // 
+            resources.ApplyResources(this.sellerName, "sellerName");
+            this.sellerName.Name = "sellerName";
             // 
             // MainPanel
             // 
@@ -785,12 +807,6 @@ namespace TarhaStore
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // printPreviewDialog1
-            // 
-            resources.ApplyResources(this.printPreviewDialog1, "printPreviewDialog1");
-            this.printPreviewDialog1.Document = this.printDocument1;
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            // 
             // mainView
             // 
             resources.ApplyResources(this, "$this");
@@ -799,6 +815,7 @@ namespace TarhaStore
             this.Controls.Add(this.AdminPanel);
             this.Controls.Add(this.StockPanel);
             this.Name = "mainView";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pill)).EndInit();
@@ -826,6 +843,9 @@ namespace TarhaStore
             this.tableLayoutPanel13.PerformLayout();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            this.tableLayoutPanel36.ResumeLayout(false);
+            this.tableLayoutPanel36.PerformLayout();
             this.MainPanel.ResumeLayout(false);
             this.tableLayoutPanel19.ResumeLayout(false);
             this.StockPanel.ResumeLayout(false);
@@ -968,7 +988,9 @@ namespace TarhaStore
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel34;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel35;
         private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel36;
+        private System.Windows.Forms.TextBox sellerName;
     }
 }
 

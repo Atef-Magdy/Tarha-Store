@@ -12,7 +12,6 @@ F:\Files\Tarha Store Project\TarhaStore\obj\Debug\TarhaStore.mainView.resources
 F:\Files\My Projects\Tarha-Store\TarhaStore\bin\Debug\TarhaStore.exe.config
 F:\Files\My Projects\Tarha-Store\TarhaStore\bin\Debug\TarhaStore.exe
 F:\Files\My Projects\Tarha-Store\TarhaStore\bin\Debug\TarhaStore.pdb
-F:\Files\My Projects\Tarha-Store\TarhaStore\obj\Debug\TarhaStore.csprojAssemblyReference.cache
 F:\Files\My Projects\Tarha-Store\TarhaStore\obj\Debug\TarhaStore.mainView.resources
 F:\Files\My Projects\Tarha-Store\TarhaStore\obj\Debug\TarhaStore.Properties.Resources.resources
 F:\Files\My Projects\Tarha-Store\TarhaStore\obj\Debug\TarhaStore.csproj.GenerateResource.cache
