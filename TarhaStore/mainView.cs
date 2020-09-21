@@ -13,6 +13,8 @@ namespace TarhaStore
 {
     public partial class mainView : Form
     {
+        //Yasmin Connection String : DESKTOP-1BF6J3A\SQLEXPRESS
+        //My Connection String : DESKTOP-MKVLAC4\\SQLEXPRESS
         String connetionString = "Data Source=DESKTOP-MKVLAC4\\SQLEXPRESS; Initial Catalog=TarhaDB;Integrated Security=true;";
         List<Panel> panels = new List<Panel>();
         int totalPrice = 0;
@@ -245,16 +247,19 @@ namespace TarhaStore
         //Print Button
         private void print_Click(object sender, EventArgs e)
         {
-            /*
+            
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
-           */
+           
+            /*
             printDocument1.PrinterSettings.PrinterName = "POS-80";
             printDocument1.PrinterSettings.Copies = 2;
             printDocument1.Print();
+            */
             pill.Rows.Clear();
             total.Text = "";
             totalPrice = 0;
+            checkDiscount = false;
             
         }
 

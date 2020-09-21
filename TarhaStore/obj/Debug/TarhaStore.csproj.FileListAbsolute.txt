@@ -18,3 +18,4 @@ F:\Files\My Projects\Tarha-Store\TarhaStore\obj\Debug\TarhaStore.csproj.Generate
 F:\Files\My Projects\Tarha-Store\TarhaStore\obj\Debug\TarhaStore.csproj.CoreCompileInputs.cache
 F:\Files\My Projects\Tarha-Store\TarhaStore\obj\Debug\TarhaStore.exe
 F:\Files\My Projects\Tarha-Store\TarhaStore\obj\Debug\TarhaStore.pdb
+F:\Files\My Projects\Tarha-Store\TarhaStore\obj\Debug\TarhaStore.csprojAssemblyReference.cache
